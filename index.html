@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدارة زفتا التعليمية - تسجيل الدخول</title>
+    <title>مديرية زفتي التعليمية - نظام التسجيل الإلكتروني</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4361ee;
+            --primary-color: #4a6cf7;
             --primary-dark: #3a56d4;
-            --secondary-color: #2b2d42;
-            --accent-color: #ff6b6b;
-            --light-color: #f8f9fa;
-            --success-color: #06d6a0;
-            --warning-color: #ffd166;
-            --border-radius: 12px;
-            --border-radius-sm: 8px;
-            --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+            --secondary-color: #6c5ce7;
+            --accent-color: #fd79a8;
+            --success-color: #00b894;
+            --warning-color: #fdcb6e;
+            --error-color: #d63031;
+            --whatsapp-color: #25D366;
+            --dark-bg: #0f172a;
+            --dark-card: #1e293b;
+            --dark-text: #f1f5f9;
+            --dark-border: #334155;
+            --neon-glow: 0 0 10px rgba(74, 108, 247, 0.5), 0 0 20px rgba(74, 108, 247, 0.3);
+            --border-radius: 16px;
+            --border-radius-sm: 10px;
+            --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --box-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.4);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            --gradient: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            --gradient: linear-gradient(135deg, #4a6cf7 0%, #6c5ce7 100%);
+            --gradient-neon: linear-gradient(135deg, #4a6cf7 0%, #8a74ff 100%);
         }
 
         * {
@@ -32,13 +39,13 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f7 100%);
+            background: var(--dark-bg);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            color: #2b2d42;
+            padding: 16px;
+            color: var(--dark-text);
             position: relative;
             overflow-x: hidden;
         }
@@ -46,52 +53,58 @@
         body::before {
             content: "";
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
+            top: -30px;
+            right: -30px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(58, 12, 163, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(74, 108, 247, 0.1) 0%, rgba(108, 92, 231, 0.1) 100%);
             z-index: -1;
+            filter: blur(15px);
         }
 
         body::after {
             content: "";
             position: absolute;
-            bottom: -50px;
-            left: -50px;
-            width: 300px;
-            height: 300px;
+            bottom: -30px;
+            left: -30px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 209, 102, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(253, 121, 168, 0.1) 0%, rgba(253, 203, 110, 0.1) 100%);
             z-index: -1;
+            filter: blur(20px);
         }
 
         .container {
             width: 100%;
-            max-width: 1100px;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 24px;
+            margin: auto;
         }
 
         header {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            padding: 25px;
-            background-color: white;
+            flex-direction: column;
+            gap: 16px;
+            padding: 20px;
+            background-color: var(--dark-card);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             position: relative;
             overflow: hidden;
             transition: var(--transition);
+            border: 1px solid var(--dark-border);
+            width: 100%;
         }
 
         header:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-hover), var(--neon-glow);
         }
 
         header::before {
@@ -99,27 +112,30 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 5px;
+            width: 4px;
             height: 100%;
-            background: var(--gradient);
+            background: var(--gradient-neon);
+            box-shadow: var(--neon-glow);
         }
 
         .logo {
-            width: 90px;
-            height: 90px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--gradient);
             color: white;
             border-radius: 50%;
-            font-size: 45px;
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            font-size: 35px;
+            box-shadow: 0 4px 12px rgba(74, 108, 247, 0.4), var(--neon-glow);
             transition: var(--transition);
+            z-index: 2;
         }
 
         header:hover .logo {
             transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 6px 16px rgba(74, 108, 247, 0.6), 0 0 12px rgba(74, 108, 247, 0.8);
         }
 
         .title {
@@ -127,106 +143,58 @@
         }
 
         .title h1 {
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-            font-size: 28px;
-            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 6px;
+            font-size: 24px;
+            font-weight: 900;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(to right, #4a6cf7, #8a74ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .title p {
-            color: #6c757d;
+            color: #94a3b8;
             font-size: 16px;
-            font-weight: 400;
+            font-weight: 500;
         }
 
         .main-content {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            gap: 24px;
+            width: 100%;
         }
 
         .login-container {
-            flex: 1;
-            background-color: white;
+            width: 100%;
+            background-color: var(--dark-card);
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             overflow: hidden;
-            display: flex;
             transition: var(--transition);
+            border: 1px solid var(--dark-border);
         }
 
         .login-container:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--box-shadow-hover);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow-hover), var(--neon-glow);
         }
 
         .login-image {
-            flex: 1;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .login-image::before {
-            content: "";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .login-image::after {
-            content: "";
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .login-image-content {
-            text-align: center;
-            z-index: 1;
-        }
-
-        .login-image-icon {
-            font-size: 80px;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
-        }
-
-        .login-image-content h2 {
-            font-size: 26px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .login-image-content p {
-            font-size: 16px;
-            opacity: 0.9;
-            line-height: 1.6;
+            display: none;
         }
 
         .login-form {
-            flex: 1;
-            padding: 40px;
+            padding: 24px;
         }
 
         .form-title {
             text-align: center;
-            margin-bottom: 35px;
-            color: var(--secondary-color);
+            margin-bottom: 28px;
+            color: var(--dark-text);
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .form-title::after {
@@ -235,83 +203,88 @@
             bottom: 0;
             right: 50%;
             transform: translateX(50%);
-            width: 60px;
-            height: 4px;
-            background: var(--gradient);
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-neon);
             border-radius: 2px;
+            box-shadow: var(--neon-glow);
         }
 
         .form-title h2 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 6px;
         }
 
         .form-title p {
-            color: #6c757d;
-            font-size: 15px;
+            color: #94a3b8;
+            font-size: 14px;
         }
 
         .input-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             position: relative;
         }
 
         label {
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: #495057;
-            font-size: 15px;
+            color: var(--dark-text);
+            font-size: 14px;
         }
 
         input {
             width: 100%;
-            padding: 16px 20px;
-            border: 2px solid #e9ecef;
+            padding: 14px 16px 14px 42px;
+            background-color: #2d3748;
+            border: 2px solid #334155;
             border-radius: var(--border-radius-sm);
-            font-size: 16px;
+            font-size: 14px;
             transition: var(--transition);
-            color: #495057;
+            color: var(--dark-text);
         }
 
         input:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+            box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.3), var(--neon-glow);
         }
 
         input::placeholder {
-            color: #adb5bd;
+            color: #64748b;
         }
 
         .input-icon {
             position: absolute;
-            left: 15px;
-            top: 42px;
-            color: #adb5bd;
+            left: 12px;
+            top: 38px;
+            color: #64748b;
             transition: var(--transition);
+            font-size: 14px;
         }
 
         input:focus + .input-icon {
             color: var(--primary-color);
+            text-shadow: 0 0 4px rgba(74, 108, 247, 0.7);
         }
 
         button {
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             background: var(--gradient);
             color: white;
             border: none;
             border-radius: var(--border-radius-sm);
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
             cursor: pointer;
             transition: var(--transition);
-            margin-top: 10px;
+            margin-top: 8px;
             position: relative;
             overflow: hidden;
             z-index: 1;
+            box-shadow: 0 4px 12px rgba(74, 108, 247, 0.4);
         }
 
         button::before {
@@ -321,7 +294,7 @@
             right: 0;
             width: 0%;
             height: 100%;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #2b2d42 100%);
+            background: var(--gradient-neon);
             transition: var(--transition);
             z-index: -1;
         }
@@ -331,20 +304,22 @@
         }
 
         button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 15px rgba(67, 97, 238, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(74, 108, 247, 0.6), 0 0 12px rgba(74, 108, 247, 0.4);
         }
 
         .welcome-page {
             display: none;
             text-align: center;
-            background-color: white;
-            padding: 70px 50px;
+            background-color: var(--dark-card);
+            padding: 40px 24px;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             animation: fadeIn 0.5s ease;
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--dark-border);
+            width: 100%;
         }
 
         .welcome-page::before {
@@ -353,94 +328,257 @@
             top: 0;
             right: 0;
             width: 100%;
-            height: 5px;
-            background: var(--gradient);
+            height: 4px;
+            background: var(--gradient-neon);
+            box-shadow: var(--neon-glow);
         }
 
         .success-check {
             color: var(--success-color);
-            font-size: 70px;
-            margin-bottom: 25px;
+            font-size: 50px;
+            margin-bottom: 20px;
             animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            filter: drop-shadow(0 0 8px rgba(0, 184, 148, 0.5));
         }
 
         .welcome-logo {
-            font-size: 90px;
-            margin-bottom: 35px;
-            background: var(--gradient);
+            font-size: 70px;
+            margin-bottom: 28px;
+            background: var(--gradient-neon);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            animation: pulse 2s infinite;
         }
 
         .welcome-message {
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         .welcome-message h2 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 28px;
-            font-weight: 800;
+            color: var(--dark-text);
+            margin-bottom: 16px;
+            font-size: 24px;
+            font-weight: 900;
         }
 
         .welcome-message p {
-            color: #6c757d;
-            font-size: 17px;
+            color: #94a3b8;
+            font-size: 16px;
             line-height: 1.6;
-            max-width: 80%;
             margin: 0 auto;
         }
 
-        .progress-bar {
-            height: 6px;
-            width: 100%;
-            background-color: #e9ecef;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-top: 30px;
-        }
-
-        .progress {
-            height: 100%;
-            width: 0%;
-            background: var(--gradient);
-            border-radius: 3px;
-            transition: width 5s linear;
-        }
-
-        .toast {
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            background-color: var(--success-color);
-            color: white;
-            padding: 18px 25px;
+        .confirmation-info {
+            background-color: #2d3748;
+            padding: 16px;
             border-radius: var(--border-radius-sm);
-            box-shadow: var(--box-shadow);
-            transform: translateX(150%);
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            z-index: 1000;
+            margin: 20px 0;
+            text-align: right;
+            border: 1px solid var(--dark-border);
+        }
+
+        .confirmation-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .info-item {
             display: flex;
-            align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--dark-border);
         }
 
-        .toast.show {
-            transform: translateX(0);
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
-        .toast i {
-            font-size: 20px;
+        .info-label {
+            color: #94a3b8;
+            font-weight: 600;
         }
 
-        @media (max-width: 992px) {
-            .login-image {
-                display: none;
+        .info-value {
+            color: var(--dark-text);
+            font-weight: 500;
+        }
+
+        .logout-button {
+            background: var(--error-color);
+            margin-top: 12px;
+        }
+
+        .logout-button:hover::before {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .neon-text {
+            color: #fff;
+            text-shadow: 0 0 4px var(--primary-color), 0 0 8px var(--primary-color), 0 0 12px var(--primary-color), 0 0 16px var(--primary-color), 0 0 28px var(--primary-color), 0 0 32px var(--primary-color);
+            animation: pulsate 1.5s infinite alternate;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                gap: 30px;
             }
             
-            .main-content {
-                flex-direction: column;
+            header {
+                flex-direction: row;
+                gap: 20px;
+                padding: 25px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+                font-size: 40px;
+            }
+            
+            .title h1 {
+                font-size: 28px;
+            }
+            
+            .title p {
+                font-size: 17px;
+            }
+            
+            .login-form {
+                padding: 30px;
+            }
+            
+            .form-title {
+                margin-bottom: 35px;
+            }
+            
+            .form-title h2 {
+                font-size: 24px;
+            }
+            
+            .form-title p {
+                font-size: 15px;
+            }
+            
+            input {
+                padding: 15px 18px 15px 45px;
+                font-size: 15px;
+            }
+            
+            .input-icon {
+                left: 15px;
+                top: 42px;
+                font-size: 15px;
+            }
+            
+            button {
+                padding: 15px;
+                font-size: 17px;
+            }
+            
+            .welcome-page {
+                padding: 50px 40px;
+            }
+            
+            .welcome-message h2 {
+                font-size: 28px;
+            }
+            
+            .welcome-message p {
+                font-size: 17px;
+                max-width: 90%;
+            }
+            
+            .success-check {
+                font-size: 60px;
+            }
+            
+            .welcome-logo {
+                font-size: 80px;
+            }
+            
+            .confirmation-info {
+                padding: 20px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .login-container {
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .login-image {
+                display: flex;
+                flex: 1;
+                background: var(--gradient);
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+                color: white;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .login-image::before {
+                content: "";
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .login-image::after {
+                content: "";
+                position: absolute;
+                bottom: -20px;
+                left: -20px;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.1);
+            }
+            
+            .login-image-content {
+                text-align: center;
+                z-index: 1;
+            }
+            
+            .login-image-icon {
+                font-size: 60px;
+                margin-bottom: 20px;
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+                animation: pulse 2s infinite;
+            }
+            
+            .login-image-content h2 {
+                font-size: 24px;
+                margin-bottom: 12px;
+                font-weight: 800;
+                text-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+            }
+            
+            .login-image-content p {
+                font-size: 15px;
+                opacity: 0.9;
+                line-height: 1.6;
+            }
+            
+            .login-form {
+                flex: 1;
+                padding: 40px;
+            }
+            
+            .welcome-page {
+                max-width: 800px;
+                padding: 60px 50px;
             }
         }
 
@@ -452,6 +590,17 @@
         @keyframes scaleIn {
             from { transform: scale(0); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes pulsate {
+            0% { text-shadow: 0 0 4px var(--primary-color), 0 0 8px var(--primary-color), 0 0 12px var(--primary-color), 0 0 16px var(--primary-color); }
+            100% { text-shadow: 0 0 8px var(--primary-color), 0 0 16px var(--primary-color), 0 0 24px var(--primary-color), 0 0 32px var(--primary-color); }
         }
 
         .floating-icons {
@@ -466,9 +615,10 @@
 
         .floating-icon {
             position: absolute;
-            color: rgba(67, 97, 238, 0.1);
-            font-size: 24px;
+            color: rgba(74, 108, 247, 0.15);
+            font-size: 20px;
             animation: float 15s infinite linear;
+            text-shadow: 0 0 8px rgba(74, 108, 247, 0.5);
         }
 
         @keyframes float {
@@ -478,6 +628,181 @@
             100% {
                 transform: translateY(-100vh) rotate(360deg);
             }
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .input-group.error input {
+            border-color: var(--error-color);
+            box-shadow: 0 0 0 3px rgba(214, 48, 49, 0.2);
+        }
+
+        .input-group.error .input-icon {
+            color: var(--error-color);
+        }
+
+        .input-group.error .error-message {
+            display: block;
+        }
+
+        .loading {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .loading-spinner::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: conic-gradient(
+                from 0deg,
+                #ff0000,
+                #ff7f00,
+                #ffff00,
+                #00ff00,
+                #0000ff,
+                #4b0082,
+                #8b00ff,
+                #ff0000
+            );
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            z-index: -1;
+        }
+
+        .loading-spinner::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--dark-bg);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .professor-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #25D366, #128C7E);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 5px 10px rgba(37, 211, 102, 0.3), 0 3px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 16px auto;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            width: fit-content;
+            max-width: 300px;
+            gap: 10px;
+        }
+
+        .professor-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(37, 211, 102, 0.4), 0 5px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .professor-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .professor-button:hover::before {
+            opacity: 1;
+            left: 100%;
+        }
+
+        .professor-button i {
+            font-size: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-sm);
+            color: white;
+            font-weight: 600;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--box-shadow);
+            transform: translateX(150%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.success {
+            background-color: var(--success-color);
+        }
+
+        .notification.error {
+            background-color: var(--error-color);
+        }
+
+        .notification.show {
+            transform: translateX(0);
         }
     </style>
 </head>
@@ -491,12 +816,27 @@
         <div class="floating-icon" style="top: 70%; right: 16%; animation-delay: 5s;"><i class="fas fa-clock"></i></div>
     </div>
 
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">جاري معالجة طلبك...</div>
+    </div>
+
+    <div class="notification success" id="successNotification">
+        <i class="fas fa-check-circle"></i>
+        <span>تم إرسال البيانات بنجاح!</span>
+    </div>
+
+    <div class="notification error" id="errorNotification">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.</span>
+    </div>
+
     <div class="container">
         <header>
             <div class="logo">🎓</div>
             <div class="title">
-                <h1>إدارة زفتا التعليمية</h1>
-                <p>نظام إدارة المدارس الإلكتروني المتكامل</p>
+                <h1>مديرية زفتي التعليمية</h1>
+                <p>أ.محمود الجوهري</p>
             </div>
         </header>
 
@@ -506,37 +846,49 @@
                     <div class="login-image-content">
                         <div class="login-image-icon">🎓</div>
                         <h2>مرحباً بك في نظامنا</h2>
-                        <p>سجل الدخول للوصول إلى لوحة التحكم المتكاملة لإدارة مدرستك بكل كفاءة وسهولة</p>
+                        <p>نظام إدارة المدارس التابع لمديرية زفتي التعليمية</p>
                     </div>
                 </div>
                 <div class="login-form">
                     <div class="form-title">
-                        <h2>تسجيل الدخول للنظام</h2>
-                        <p>أدخل بيانات مدرستك للوصول إلى لوحة التحكم</p>
+                        <h2>تسجيل معلوماتك في النظام</h2>
+                        <p>يرجى ملء جميع الحقول المطلوبة للتسجيل في النظام</p>
                     </div>
                     <form id="loginForm">
                         <div class="input-group">
                             <label for="schoolName"><i class="fas fa-school"></i> اسم المدرسة</label>
                             <input type="text" id="schoolName" required placeholder="أدخل اسم المدرسة">
                             <span class="input-icon"><i class="fas fa-school"></i></span>
+                            <div class="error-message" id="schoolNameError">يرجى إدخال اسم المدرسة</div>
                         </div>
                         <div class="input-group">
                             <label for="schoolAddress"><i class="fas fa-map-marker-alt"></i> عنوان المدرسة</label>
                             <input type="text" id="schoolAddress" required placeholder="أدخل عنوان المدرسة">
                             <span class="input-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <div class="error-message" id="schoolAddressError">يرجى إدخال عنوان المدرسة</div>
                         </div>
                         <div class="input-group">
                             <label for="managerName"><i class="fas fa-user-tie"></i> اسم المدير</label>
                             <input type="text" id="managerName" required placeholder="أدخل اسم المدير">
                             <span class="input-icon"><i class="fas fa-user-tie"></i></span>
+                            <div class="error-message" id="managerNameError">يرجى إدخال اسم المدير</div>
                         </div>
                         <div class="input-group">
                             <label for="phoneNumber"><i class="fas fa-phone"></i> رقم الهاتف</label>
-                            <input type="tel" id="phoneNumber" required placeholder="أدخل رقم الهاتف">
+                            <input type="tel" id="phoneNumber" required placeholder="أدخل رقم الهاتف (11 رقماً)">
                             <span class="input-icon"><i class="fas fa-phone"></i></span>
+                            <div class="error-message" id="phoneNumberError">يرجى إدخال رقم هاتف صحيح (11 رقماً)</div>
                         </div>
-                        <button type="submit"><i class="fas fa-sign-in-alt"></i> تسجيل الدخول</button>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> إرسال البيانات</button>
                     </form>
+                    
+                    <div class="button-container">
+                        <a href="https://wa.me/+201000219095" class="professor-button" id="professorButton">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>الأستاذ محمود الجوهري</span>
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -544,100 +896,235 @@
                 <div class="success-check"><i class="fas fa-check-circle"></i></div>
                 <div class="welcome-logo">🎓</div>
                 <div class="welcome-message">
-                    <h2>مرحباً بك في إدارة زفتا التعليمية</h2>
-                    <p>تم تسجيل الدخول بنجاح، سيتم توجيهك إلى لوحة التحكم قريباً.</p>
+                    <h2>مرحباً بك في نظام مديرية زفتي التعليمية</h2>
+                    <p>تم تسجيل بيانات مدرستك بنجاح في النظام، سيتم التواصل معك قريباً</p>
                 </div>
-                <div class="progress-bar">
-                    <div class="progress" id="progress"></div>
+                <div class="confirmation-info">
+                    <h3>بيانات التسجيل المرسلة:</h3>
+                    <div class="info-item">
+                        <span class="info-label">اسم المدرسة:</span>
+                        <span class="info-value" id="confirmSchoolName"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">عنوان المدرسة:</span>
+                        <span class="info-value" id="confirmSchoolAddress"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">اسم المدير:</span>
+                        <span class="info-value" id="confirmManagerName"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">رقم الهاتف:</span>
+                        <span class="info-value" id="confirmPhoneNumber"></span>
+                    </div>
                 </div>
+                <button class="logout-button" id="newRegistrationButton"><i class="fas fa-plus-circle"></i> تسجيل جديد</button>
             </div>
         </div>
     </div>
 
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span>تم إرسال البيانات بنجاح إلى بوت التلجرام</span>
-    </div>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const loginForm = document.getElementById('loginForm');
-            const loginContainer = document.getElementById('loginContainer');
-            const welcomePage = document.getElementById('welcomePage');
-            const toast = document.getElementById('toast');
-            const progress = document.getElementById('progress');
+        // متغيرات DOM
+        const loginForm = document.getElementById('loginForm');
+        const loginContainer = document.getElementById('loginContainer');
+        const welcomePage = document.getElementById('welcomePage');
+        const loadingScreen = document.getElementById('loading');
+        const successNotification = document.getElementById('successNotification');
+        const errorNotification = document.getElementById('errorNotification');
+        const newRegistrationButton = document.getElementById('newRegistrationButton');
+        
+        // عناصر عرض بيانات التأكيد
+        const confirmSchoolName = document.getElementById('confirmSchoolName');
+        const confirmSchoolAddress = document.getElementById('confirmSchoolAddress');
+        const confirmManagerName = document.getElementById('confirmManagerName');
+        const confirmPhoneNumber = document.getElementById('confirmPhoneNumber');
+
+        // إعدادات Telegram (يجب استبدالها بإعداداتك الخاصة)
+        const TELEGRAM_BOT_TOKEN = '8300648022:AAFkEBjk74D0fUZgExAQrlZU1sGrCoFRGGU'; // استبدل بـ token البوت الخاص بك
+        const TELEGRAM_CHAT_ID = '6487343743'; // استبدل بـ chat id الخاص بك
+
+        // التحقق من صحة رقم الهاتف
+        function validatePhoneNumber(phone) {
+            const phoneRegex = /^01[0125][0-9]{8}$/;
+            return phoneRegex.test(phone);
+        }
+
+        // إظهار شاشة التحميل
+        function showLoading() {
+            loadingScreen.style.display = 'flex';
+        }
+
+        // إخفاء شاشة التحميل
+        function hideLoading() {
+            loadingScreen.style.display = 'none';
+        }
+
+        // إظهار إشعار
+        function showNotification(notification, duration = 3000) {
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, duration);
+        }
+
+        // إظهار رسالة الخطأ
+        function showError(inputId, errorId, message) {
+            const input = document.getElementById(inputId);
+            const error = document.getElementById(errorId);
             
-            // التحقق مما إذا كان المستخدم قد سجل الدخول من قبل
-            const hasLoggedIn = localStorage.getItem('hasLoggedIn');
+            input.parentElement.classList.add('error');
+            error.textContent = message;
+            error.style.display = 'block';
+        }
+
+        // إخفاء رسالة الخطأ
+        function hideError(inputId) {
+            const input = document.getElementById(inputId);
+            const errorId = inputId + 'Error';
+            const error = document.getElementById(errorId);
             
-            if (hasLoggedIn) {
-                loginContainer.style.display = 'none';
-                welcomePage.style.display = 'block';
-                startProgressBar();
+            input.parentElement.classList.remove('error');
+            error.style.display = 'none';
+        }
+
+        // إرسال البيانات إلى Telegram
+        async function sendToTelegram(data) {
+            try {
+                const message = `
+🎓 *تسجيل جديد في نظام مديرية زفتي التعليمية*
+                
+*اسم المدرسة:* ${data.schoolName}
+*عنوان المدرسة:* ${data.schoolAddress}
+*اسم المدير:* ${data.managerName}
+*رقم الهاتف:* ${data.phoneNumber}
+                
+*التاريخ:* ${new Date().toLocaleString('ar-EG')}
+                `;
+                
+                const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                const result = await response.json();
+                return result.ok;
+            } catch (error) {
+                console.error('Error sending to Telegram:', error);
+                return false;
+            }
+        }
+
+        // تسجيل البيانات
+        loginForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // الحصول على القيم من النموذج
+            const schoolName = document.getElementById('schoolName').value.trim();
+            const schoolAddress = document.getElementById('schoolAddress').value.trim();
+            const managerName = document.getElementById('managerName').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            
+            // التحقق من صحة البيانات
+            let isValid = true;
+            
+            if (schoolName === '') {
+                showError('schoolName', 'schoolNameError', 'يرجى إدخال اسم المدرسة');
+                isValid = false;
+            } else {
+                hideError('schoolName');
             }
             
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
+            if (schoolAddress === '') {
+                showError('schoolAddress', 'schoolAddressError', 'يرجى إدخال عنوان المدرسة');
+                isValid = false;
+            } else {
+                hideError('schoolAddress');
+            }
+            
+            if (managerName === '') {
+                showError('managerName', 'managerNameError', 'يرجى إدخال اسم المدير');
+                isValid = false;
+            } else {
+                hideError('managerName');
+            }
+            
+            if (!validatePhoneNumber(phoneNumber)) {
+                showError('phoneNumber', 'phoneNumberError', 'يرجى إدخال رقم هاتف صحيح (11 رقماً)');
+                isValid = false;
+            } else {
+                hideError('phoneNumber');
+            }
+            
+            if (!isValid) return;
+            
+            // إظهار شاشة التحميل
+            showLoading();
+            
+            // تجميع البيانات
+            const formData = {
+                schoolName,
+                schoolAddress,
+                managerName,
+                phoneNumber,
+                timestamp: new Date().toISOString()
+            };
+            
+            try {
+                // محاكاة إرسال البيانات (استبدل هذا بالاتصال الفعلي بـ Telegram)
+                const success = await sendToTelegram(formData);
                 
-                // جمع البيانات من النموذج
-                const schoolName = document.getElementById('schoolName').value;
-                const schoolAddress = document.getElementById('schoolAddress').value;
-                const managerName = document.getElementById('managerName').value;
-                const phoneNumber = document.getElementById('phoneNumber').value;
+                // إخفاء شاشة التحميل
+                hideLoading();
                 
-                // إرسال البيانات إلى بوت التلجرام
-                sendToTelegramBot(schoolName, schoolAddress, managerName, phoneNumber);
-                
-                // حفظ حالة تسجيل الدخول
-                localStorage.setItem('hasLoggedIn', 'true');
-                localStorage.setItem('schoolName', schoolName);
-                
-                // إظهار رسالة النجاح
-                showToast();
-                
-                // الانتقال إلى الصفحة الترحيبية بعد ثانيتين
-                setTimeout(function() {
+                if (success) {
+                    // إظهار إشعار النجاح
+                    showNotification(successNotification);
+                    
+                    // تعبئة بيانات التأكيد
+                    confirmSchoolName.textContent = schoolName;
+                    confirmSchoolAddress.textContent = schoolAddress;
+                    confirmManagerName.textContent = managerName;
+                    confirmPhoneNumber.textContent = phoneNumber;
+                    
+                    // الانتقال إلى صفحة الترحيب
                     loginContainer.style.display = 'none';
                     welcomePage.style.display = 'block';
-                    startProgressBar();
-                }, 2000);
+                } else {
+                    // إظهار إشعار الخطأ
+                    showNotification(errorNotification);
+                }
+            } catch (error) {
+                hideLoading();
+                showNotification(errorNotification);
+                console.error('Error:', error);
+            }
+        });
+
+        // زر التسجيل الجديد
+        newRegistrationButton.addEventListener('click', function() {
+            // إعادة تعيين النموذج
+            loginForm.reset();
+            
+            // العودة إلى صفحة التسجيل
+            welcomePage.style.display = 'none';
+            loginContainer.style.display = 'flex';
+        });
+
+        // إخفاء رسائل الخطأ عند التركيز على الحقول
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                hideError(this.id);
             });
-            
-            function showToast() {
-                toast.classList.add('show');
-                setTimeout(function() {
-                    toast.classList.remove('show');
-                }, 3000);
-            }
-            
-            function startProgressBar() {
-                progress.style.width = '0%';
-                setTimeout(function() {
-                    progress.style.width = '100%';
-                }, 50);
-            }
-            
-            // هذه الدالة سترسل البيانات إلى بوت التلجرام
-            function sendToTelegramBot(schoolName, schoolAddress, managerName, phoneNumber) {
-                // هنا سيتم وضع كود إرسال البيانات إلى بوت التلجرام
-                const botToken = '8300648022:AAFkEBjk74D0fUZgExAQrlZU1sGrCoFRGGU'; // استبدل هذا ب token البوت
-                const chatId = '6487343743'; // استبدل هذا ب chat id
-                
-                const message = `تسجيل دخول جديد إلى نظام إدارة زفتا التعليمية:
-                اسم المدرسة: ${schoolName}
-                عنوان المدرسة: ${schoolAddress}
-                اسم المدير: ${managerName}
-                رقم الهاتف: ${phoneNumber}
-                وقت التسجيل: ${new Date().toLocaleString('ar-SA')}`;
-                
-                // لأغراض العرض، سنقوم فقط بعرض البيانات في الكونسول
-                console.log('بيانات تسجيل الدخول:');
-                console.log('اسم المدرسة:', schoolName);
-                console.log('عنوان المدرسة:', schoolAddress);
-                console.log('اسم المدير:', managerName);
-                console.log('رقم الهاتف:', phoneNumber);
-                console.log('سيتم إرسال هذه البيانات إلى بوت التلجرام عند تفعيل الكود');
-            }
         });
     </script>
 </body>
